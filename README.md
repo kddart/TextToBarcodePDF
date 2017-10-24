@@ -3,7 +3,7 @@ Handy tool for creating printable PDF files with Barcodes from .csv and .tsv fil
 
 Requires the latest version of Java JVM.
 
-# Download the executable .jar file for Windows/Mac/Linux from here:
+# Download the executable
 http://software.kddart.com/TextToBarcodePDF/
 
 # How to Use:
