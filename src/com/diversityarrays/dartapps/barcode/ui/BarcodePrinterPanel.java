@@ -239,7 +239,7 @@ public class BarcodePrinterPanel extends JPanel {
 
 	private void processNewDir(File file) {
 		List<BarcodeFile> result = new ArrayList<>();
-		dir.setText(file.getAbsolutePath());
+		dir.setText(file.getPath());
 
 		if (file.isDirectory()) {			
 			for (File fileFound : file.listFiles()) {
