@@ -88,7 +88,8 @@ public class BarcodeUtilsLite {
 			BarcodeFormat.CODE_128,
 //			BarcodeFormat.DATA_MATRIX,
 			BarcodeFormat.PDF_417,
-			BarcodeFormat.QR_CODE
+			BarcodeFormat.QR_CODE,
+			BarcodeFormat.AZTEC
 	};
 	
 	public static Writer createBarcodeWriter(BarcodeFormat barcodeFormat) {
