@@ -39,6 +39,7 @@ import javax.swing.AbstractAction;
 import javax.swing.Action;
 import javax.swing.Box;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -207,6 +208,12 @@ public class BarcodePrinterPanel extends JPanel {
 		Box middleBox = Box.createVerticalBox();
 		middleBox.add(new JScrollPane(fileTable));
 		middleBox.add(dropPanel);
+		
+		
+		Box chooserBox = Box.createHorizontalBox();
+		chooserBox.add(new JLabel("Barcode Format: "));
+		chooserBox.add(formatChooser);
+		middleBox.add(chooserBox);
 
 		this.add(topBox, BorderLayout.NORTH);
 		this.add(bottomBox, BorderLayout.SOUTH);
@@ -262,6 +269,8 @@ public class BarcodePrinterPanel extends JPanel {
 
 	private final static int DEBUG = 1;
 
+	private final JComboBox<BarcodeFormat> formatChooser = new JComboBox<>(BarcodeUtilsLite.usableFormats);
+	
 	private Boolean processOutFile(File outFile) {		
 
 		List<Boolean> error = new ArrayList<>();
@@ -295,7 +304,7 @@ public class BarcodePrinterPanel extends JPanel {
 								System.out.println("Building Barcode Image for: " + barcode.first + " @ line " + i);						
 							}
 
-							BufferedImage image = BarcodeUtilsLite.createBarcodeImage(BarcodeFormat.CODE_128, barcode.first, width, height);
+							BufferedImage image = BarcodeUtilsLite.createBarcodeImage(((BarcodeFormat) formatChooser.getSelectedItem()), barcode.first, width, height);
 							Image outImg = Image.getInstance(image, null);
 
 							if (DEBUG > 0) {

@@ -84,6 +84,13 @@ public class BarcodeUtilsLite {
 		}
 	}
 
+	public static BarcodeFormat[] usableFormats = {
+			BarcodeFormat.CODE_128,
+//			BarcodeFormat.DATA_MATRIX,
+			BarcodeFormat.PDF_417,
+			BarcodeFormat.QR_CODE
+	};
+	
 	public static Writer createBarcodeWriter(BarcodeFormat barcodeFormat) {
 		Writer writer = null;
 		switch (barcodeFormat) {
