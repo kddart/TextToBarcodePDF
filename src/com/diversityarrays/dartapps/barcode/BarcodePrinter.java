@@ -34,7 +34,7 @@ import com.diversityarrays.dartapps.barcode.ui.BarcodePrinterPanel;
  */
 public class BarcodePrinter {
 
-	private final static String VERSION_STRING = "1.0.1";
+	private final static String VERSION_STRING = "1.0.2";
 	
 	private final static String TITLE = "TextToBarcodePDF";
 	
